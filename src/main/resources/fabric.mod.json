@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "io.github.lordanaku.mana_demo.ExampleMod"
+      "io.github.lordanaku.mana_demo.ManaBarDemoCore"
     ]
   },
   "mixins": [
