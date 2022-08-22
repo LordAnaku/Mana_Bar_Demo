@@ -13,7 +13,7 @@ public class ManaHudElement implements HudElements {
 
     @Override
     public void renderBar() {
-        getManaPercent();
+        getManaProgress();
         RenderHudElements.drawDefaultBar(getSide(), ASBModUtils.getPosYMod(getSide()));
         RenderHudElements.drawProgressBar(getSide(), ASBModUtils.getPosYMod(getSide()), progress, Settings.colorSettings.get("Mana"), Settings.alphaSettings.get("Mana"));
     }
@@ -49,7 +49,7 @@ public class ManaHudElement implements HudElements {
         return "Mana";
     }
 
-    private void getManaPercent() {
+    private void getManaProgress() {
         float mana = 50;
         float manaMax = 100;
         float ratio = Math.min(1, Math.max(0, mana / manaMax));
