@@ -1,10 +1,10 @@
 package io.github.lordanaku.mana_demo.hud;
 
 import io.github.lordanaku.anakus_status_bars.api.hudelements.HudElements;
+import io.github.lordanaku.anakus_status_bars.api.hudelements.RenderHudFunctions;
 import io.github.lordanaku.anakus_status_bars.screen.gui.config.Settings;
-import io.github.lordanaku.anakus_status_bars.screen.hud.RenderHudElements;
 import io.github.lordanaku.anakus_status_bars.utils.ASBModUtils;
-import io.github.lordanaku.anakus_status_bars.utils.TextureUtils;
+import io.github.lordanaku.anakus_status_bars.utils.TextureRecords;
 import net.minecraft.util.math.MathHelper;
 
 public class ManaHudElement implements HudElements {
@@ -14,13 +14,13 @@ public class ManaHudElement implements HudElements {
     @Override
     public void renderBar() {
         getManaProgress();
-        RenderHudElements.drawDefaultBar(getSide(), ASBModUtils.getPosYMod(getSide()));
-        RenderHudElements.drawProgressBar(getSide(), ASBModUtils.getPosYMod(getSide()), progress, Settings.colorSettings.get("Mana"), Settings.alphaSettings.get("Mana"));
+        RenderHudFunctions.drawDefaultBar(getSide(), ASBModUtils.getPosYMod(getSide()), TextureRecords.DEFAULT_BAR);
+        RenderHudFunctions.drawProgressBar(getSide(), ASBModUtils.getPosYMod(getSide()), TextureRecords.PROGRESS_BAR, progress, Settings.colorSettings.get("Mana"), Settings.alphaSettings.get("Mana"));
     }
 
     @Override
     public void renderIcon() {
-        RenderHudElements.drawIcon(getSide(), ASBModUtils.getPosYMod(getSide()), TextureUtils.BUBBLE_ICON);
+        RenderHudFunctions.drawIcon(getSide(), ASBModUtils.getPosYMod(getSide()), TextureRecords.BUBBLE_ICON, 81);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ManaHudElement implements HudElements {
         float mana = 50;
         float manaMax = 100;
         float ratio = Math.min(1, Math.max(0, mana / manaMax));
-        int maxProgress = TextureUtils.PROGRESS_BAR.getWidth();
+        int maxProgress = 81;
         progress = Math.min(maxProgress, MathHelper.ceil(ratio * maxProgress) + 2);
     }
 }
