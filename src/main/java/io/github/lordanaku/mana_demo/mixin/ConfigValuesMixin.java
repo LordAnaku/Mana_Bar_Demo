@@ -26,10 +26,19 @@ public class ConfigValuesMixin {
 
     @Inject(at = @At("TAIL"), method = "buildColors", remap = false)
     private static void buildColors(ConfigCategory category, ConfigEntryBuilder builder, CallbackInfo ci) {
-        ColorEntry manaBarColor = builder.startColorField(Text.translatable("option.mana_demo.enable_mana_bar"), Settings.colorSettings.get("Mana"))
+        ColorEntry manaBarColor = builder.startColorField(Text.translatable("option.mana_demo.mana_bar_color"), Settings.colorSettings.get("Mana"))
                 .setDefaultValue(0x007FFF)
                 .setSaveConsumer(newValue -> Settings.colorSettings.replace("Mana", newValue))
                 .build();
         category.addEntry(manaBarColor);
+    }
+
+    @Inject(at = @At("TAIL"), method = "buildIcons", remap = false)
+    private static void buildIcons(ConfigCategory category, ConfigEntryBuilder builder, CallbackInfo ci) {
+        BooleanListEntry enableManaIcon = builder.startBooleanToggle(Text.translatable("option.mana_demo.enable_mana_icon"), Settings.iconSettings.get("Mana"))
+                .setDefaultValue(true)
+                .setSaveConsumer(newValue -> Settings.iconSettings.replace("Mana", newValue))
+                .build();
+        category.addEntry(enableManaIcon);
     }
 }

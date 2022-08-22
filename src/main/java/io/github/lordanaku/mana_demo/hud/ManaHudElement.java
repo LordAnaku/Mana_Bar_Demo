@@ -10,6 +10,7 @@ import net.minecraft.util.math.MathHelper;
 public class ManaHudElement implements HudElements {
     private boolean renderSide;
     private int progress;
+
     @Override
     public void renderBar() {
         getManaPercent();

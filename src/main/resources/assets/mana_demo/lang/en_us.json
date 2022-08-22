@@ -1,3 +1,6 @@
 {
+  "option.mana_demo.enable_mana_bar": "Enable Mana Bar",
+  "option.mana_demo.mana_bar_color": "Mana Bar Color",
+  "option.mana_demo.enable_mana_icon": "Enable Mana Icon"
 
 }
