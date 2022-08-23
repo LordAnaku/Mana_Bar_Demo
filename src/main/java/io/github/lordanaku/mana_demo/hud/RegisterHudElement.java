@@ -4,11 +4,13 @@ import io.github.lordanaku.anakus_status_bars.api.ModRegisterFunctions;
 import io.github.lordanaku.anakus_status_bars.api.hudelements.RenderHudFunctions;
 import io.github.lordanaku.anakus_status_bars.screen.gui.config.ConfigFileHandler;
 import io.github.lordanaku.anakus_status_bars.screen.gui.config.Settings;
+import io.github.lordanaku.anakus_status_bars.utils.TextureRecord;
 import net.minecraft.util.Identifier;
 
 public class RegisterHudElement {
 
     public static final Identifier MANA_HUD_ELEMENT = new Identifier("mana_demo", "textures/gui/mana_hud_element.png");
+    public static final TextureRecord MANA_ICON = new TextureRecord(MANA_HUD_ELEMENT, 99, 0, 9, 9, 256, 256);
 
     /* * Register calls must be made before setupHudElements() to work at start * */
     /* * Register calls must be made after readFromConfig() if you wish to use Anaku's Status Bars Mod Menu instead of your own * */

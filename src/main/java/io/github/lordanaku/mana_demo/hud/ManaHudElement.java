@@ -20,7 +20,7 @@ public class ManaHudElement implements HudElements {
 
     @Override
     public void renderIcon() {
-        RenderHudFunctions.drawIcon(getSide(), ASBModUtils.getPosYMod(getSide()), TextureRecords.BUBBLE_ICON, 81);
+        RenderHudFunctions.drawIcon(getSide(), ASBModUtils.getPosYMod(getSide()), RegisterHudElement.MANA_ICON, 81);
     }
 
     @Override

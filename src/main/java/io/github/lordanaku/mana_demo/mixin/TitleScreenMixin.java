@@ -12,7 +12,7 @@ public class TitleScreenMixin {
 
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
-        /* * Best place I have found to call function to garuntee that the config is loaded before we try to access it. */
+        /* * Best place I have found to call function to guarantee that the dependencies are loaded before we try to access it. */
         RegisterHudElement.registerHudElement();
     }
 }
