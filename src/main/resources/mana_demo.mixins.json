@@ -4,7 +4,6 @@
   "package": "io.github.lordanaku.mana_demo.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ConfigValuesMixin"
   ],
   "client": [
     "TitleScreenMixin"
